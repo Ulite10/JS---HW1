@@ -27,7 +27,7 @@ function getCount() {
 }
 
 function isCountInvalid(val) {
-    return val === null || val.trim() === '' || isNaN(val) || val <= 2;
+    return val === null || val.trim() === '' || isNaN(val) || val < 2;
 }
 
 function getNumber() {
