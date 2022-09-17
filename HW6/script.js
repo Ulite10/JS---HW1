@@ -32,10 +32,10 @@ function calculateStudentAverageMark(student) {
 }
 
 function calculateGroupAverageMark(students) {
-    let newArr = [];
+    let allMarks = [];
     for (let i = 0; i < students.length; i++) {
-        newArr = students[i].marks.concat(newArr);
+        allMarks = students[i].marks.concat(allMarks);
     }
-    const sum = newArr.reduce((acc, item) => acc + item);
-    return sum / newArr.length
+    const sum = allMarks.reduce((acc, item) => acc + item);
+    return sum / allMarks.length
 }
