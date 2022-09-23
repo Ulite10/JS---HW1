@@ -1,0 +1,49 @@
+.heading {
+    vertical-align: middle;
+    margin-left: 100px;
+}
+
+.list-box {
+    height: 400px;
+    width: fit-content;
+    vertical-align: middle;
+    margin-left: 100px;
+}
+
+.input-box {
+    vertical-align: middle;
+    margin-left: 100px;
+}
+
+#list {
+    line-height: 1.5em;
+    margin: 5px 0 15px;
+    padding: 0;
+}
+
+.list-item {
+    color: rgb(140, 7, 7);
+    background-color: blanchedalmond;
+}
+
+.list-item-padding {
+    list-style: none;
+    position: relative;
+    padding: 3px 0 2px 25px;
+}
+
+li.square::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 5px;
+    width: 10px;
+    height: 10px;
+    background-color: #f9dd94;
+}
+
+.task-done {
+    color: rgb(9, 2, 15);
+    content: "";
+    background-color: #94f9c0;
+}
