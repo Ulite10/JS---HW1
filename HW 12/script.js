@@ -4,28 +4,28 @@ function Calculator(a) {
     this.result = a;
 
     this.add = function (b) {
-        this.result += b;
+        return (this.result += b);
     };
 
     this.mult = function (b) {
-        this.result *= b;
+        return (this.result *= b);
     }
 
     this.sub = function (b) {
-        this.result -= b;
+        return (this.result -= b);
     }
 
     this.div = function (b) {
-        this.result /= b;
+        return (this.result /= b);
     }
 
     this.set = function (b) {
-        this.result = b;
+        return (this.result = b);
     }
 
 }
 
-const calc = new Calculator(100);
+const calc = new Calculator(200);
 console.log(calc.result) // 100
 calc.add(10); // 110
 console.log(calc.result) // 110
