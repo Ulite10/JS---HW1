@@ -1,5 +1,6 @@
-'use strict'
-
+const LIST_ITEM_CLASS = 'list-item';
+const LIST_ITEM_CLASS2 = 'list-item-padding';
+const TASK_DONE = 'task-done';
 
 const listEl = document.querySelector('#list');
 const createEl = document.querySelector('#button');
@@ -12,19 +13,11 @@ function onBtnClick() {
     if (!validateItemsData()) {
         return;
     };
+
     const newItem = getItemsData();
-    const liEl = document.createElement('li');
 
-    liEl.textContent = newItem;
-    liEl.classList.add('list-item', 'list-item-padding')
-    listEl.append(liEl);
-    inputEl.value = '';
-
-    liEl.addEventListener('click', () => liEl.classList.toggle('task-done'));
-};
-
-function getItemsData() {
-    return inputEl.value
+    addTodo(newItem);
+    resertForm();
 };
 
 function validateItemsData() {
@@ -32,4 +25,33 @@ function validateItemsData() {
         return false
     }
     return true
+};
+
+function getItemsData() {
+    return {
+        title: inputEl.value
+    }
+};
+
+function addTodo(todo) {
+    const todoEl = generateNewItem(todo);
+    listEl.append(liEl);
+};
+
+function generateNewItem(todo) {
+    const liEl = document.createElement('li');
+    
+    liEl.textContent = todo.title;
+    liEl.classList.add(LIST_ITEM_CLASS, LIST_ITEM_CLASS2);
+    liEl.addEventListener('click', () => toggleTodo(liEl));
+
+    return liEl;
+};
+
+function resertForm() {
+    inputEl.value = '';
+};
+
+function toggleTodo(liEl) {
+    liEl.classList.toggle(TASK_DONE)
 }
